@@ -6,6 +6,8 @@ O BotDoStreamer do vasco é um bot feito
 para ser utilizado no discord atualmente
 ele é capaz de tocar músicas
 
+<br/>
+
 <!-- Comandos -->
 ## Comandos
 
@@ -16,12 +18,12 @@ ele é capaz de tocar músicas
 - [ ] ?stop(em breve)/interrompe a música que está tocando.
 
 
-
+<br/>
 
 ### Instalação
 
 * ```sh
-     Git clone https://github.com/BrazillianBeast/musicBotDiscord
+     git clone https://github.com/BrazillianBeast/musicBotDiscord
     ```
 
 
@@ -35,7 +37,7 @@ Dentro da pasta do projeto:
     npm-install
     ```
 
-
+<br/>
 
 ### Executando
 
