@@ -16,9 +16,14 @@ ele é capaz de tocar músicas
 - [ ] ?stop(em breve)/interrompe a música que está tocando.
 
 
+
+
 ### Instalação
 
-* Git clone https://github.com/BrazillianBeast/musicBotDiscord
+* ```sh
+     Git clone https://github.com/BrazillianBeast/musicBotDiscord
+    ```
+
 
 * Qualquer modificação precisar ser feita em index.js
 
@@ -29,6 +34,8 @@ Dentro da pasta do projeto:
 * ```sh
     npm-install
     ```
+
+
 
 ### Executando
 
