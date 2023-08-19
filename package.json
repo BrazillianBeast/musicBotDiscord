@@ -1,0 +1,22 @@
+{
+  "name": "music-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "BrazillianBeast",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "distube": "^4.0.6",
+    "dotenv": "^16.3.1",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^5.2.0",
+    "libsodium-wrappers": "^0.7.11",
+    "opusscript": "^0.1.0",
+    "ytdl-core": "^4.11.5"
+  }
+}
