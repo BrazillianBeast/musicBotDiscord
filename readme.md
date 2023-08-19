@@ -11,9 +11,9 @@ ele é capaz de tocar músicas
 
 - [x] ?play nome de uma musica - tocar uma música/meme que você deseja.
 
-- [] ?skip(em breve) / pular para próxima música na fila.
+- [ ] ?skip(em breve) / pular para próxima música na fila.
 
-- [] ?stop(em breve)/interrompe a música que está tocando.
+- [ ] ?stop(em breve)/interrompe a música que está tocando.
 
 
 ### Instalação
