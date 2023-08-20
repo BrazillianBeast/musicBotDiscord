@@ -9,7 +9,6 @@ const client = new Discord.Client({
     ] 
 });
 const { DisTube } = require("distube");
-// const streamOptions = {seek: 0, volume: 1};
 
 client.login(process.env.TOKEN);
 
@@ -26,15 +25,12 @@ client.on('ready', () => {
 })
 
 client.on('messageCreate', message => {
-    // console.log(
-    //     `got a message: ${message}`
-    // )
+  
     if (message.author.bot) return;
 
     const prefix = "?";
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     
-    // console.log('recebi uma mensagem')
     if (!message.content.toLowerCase().startsWith(prefix))return;
 
     let comando = args.shift().toLowerCase();
@@ -108,38 +104,3 @@ client.Distube.on('error', (channel, e) => {
     if (channel) channel.send(`Um erro foi encontrado: ${e}`)
     else console.error(e)
 })
-
-
-
-
-
-
-
-
-
-
-// if(message.content.toLowerCase().startsWith("?play")){
-    //     console.log('entrei na condicao')
-    //     let voiceChannel = msg.guild.channels.find( channel => channel.id === 
-    //         '1035740536876830750');
-
-    //     if (voiceChannel == null){
-    //         console.log('Canal nao encontrado')
-    //     }
-
-    //     if (voiceChannel !== null){
-    //         console.log('O canal foi encontrado');
-
-    //         voiceChannel.join()
-    //         .then(connection => {
-    //             const stream = ytdl('https://www.youtube.com/watch?v=2kC0EzJ19CshyNu5i_61KA',
-    //             { filter: 'audioonly' });
-
-    //             const DJ = connection.playStream(stream, streamOptions);
-    //             DJ.on('end', end => {
-    //                 voiceChannel.leave();
-    //             });
-    //         })
-    //         .catch(console.error);
-    //     }
-    // }
