@@ -11,11 +11,17 @@ ele é capaz de tocar músicas
 <!-- Comandos -->
 ## Comandos
 
-- [x] ?play nome de uma musica - tocar uma música/meme que você deseja.
+- [x] **?play** - Nome de uma musica - tocar uma música/meme que você deseja.
 
-- [ ] ?skip(em breve) / pular para próxima música na fila.
+- [x] **?skip** - Pular para próxima música na fila.
 
-- [ ] ?stop(em breve)/interrompe a música que está tocando.
+- [x] **?stop** - Interrompe a música que está tocando.
+
+- [x] **?queue** - Mostra a fila de músicas tocando e que irão tocar à seguir.
+
+- [x] **?oi** - Fala oi para o usuário que enviar a mensagem.
+
+
 
 
 <br/>
