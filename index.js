@@ -110,7 +110,7 @@ client.on('messageCreate', message => {
 });
 
 client.Distube.on("playSong", (queue, song) => {
-   queue.textChannel.send(`Tocando agora: ${song.name}`);
+   queue.textChannel.send(`** Tocando agora: ${song.name} **`);
 });
 
 client.Distube.on("finish", (queue) => {
