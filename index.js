@@ -36,6 +36,10 @@ client.on('messageCreate', message => {
     let comando = args.shift().toLowerCase();
     if (comando === "play"){
         try{
+            let channel = message.member.voice.channel;
+            if (!channel) {
+                return message.channel.send(`** Você precisar estar em um canal de voz para executar esse comando ${message.member} **`)
+              }
             client.Distube.play(message.member.voice.channel, args.join(" "), {
                 member: message.member,
                 textChannel: message.channel,
@@ -48,8 +52,12 @@ client.on('messageCreate', message => {
     
     else if (comando === "stop") {
         try{
+            let channel = message.member.voice.channel;
+            if (!channel) {
+                return message.channel.send(`** Você precisar estar em um canal de voz para executar esse comando ${message.member} **`)
+              }
             client.Distube.stop(message);
-            message.channel.send("Parei de tocar a música!");
+            message.channel.send(`** Parei de tocar a música! ** `);
         }
         catch(e){
             console.log(e);
@@ -67,7 +75,19 @@ client.on('messageCreate', message => {
 
     else if (comando === "skip"){
         try{
-            client.Distube.skip(message);
+            let currentChannel = message.member.voice.channel;
+            if (!currentChannel) {
+                return message.channel.send(`** Você precisar estar em um canal de voz para executar esse comando ${message.member} **`)
+              }
+            let queue = client.Distube.getQueue(message.guild.id);let channel = message.member.voice.channel;
+            if (!queue) {
+                return message.channel.send(`** Nada tocando **`)
+              }
+            if (queue.autoplay || queue.songs.length > 1) Distube.skip(message)
+            else{ 
+                client.Distube.stop(message) 
+                message.channel.send("** Sem mais músicas na fila de execução **");
+            }
         }
         catch(e){
             console.log(e);
@@ -94,11 +114,11 @@ client.Distube.on("playSong", (queue, song) => {
 });
 
 client.Distube.on("finish", (queue) => {
-    queue.textChannel.send("Sem mais músicas na fila, saindo do canal de voz")
+    queue.textChannel.send(`** Sem mais músicas na fila, saindo do canal de voz **`)
 });
 
 
-client.Distube.on("noRelated", queue => queue.textChannel.send("Não encontrei nada relacionado à isso para tocar :( "));
+client.Distube.on("noRelated", queue => queue.textChannel.send(`** Não encontrei nada relacionado à isso para tocar :( ** `));
 
 client.Distube.on('error', (channel, e) => {
     if (channel) channel.send(`Um erro foi encontrado: ${e}`)
